@@ -6,7 +6,8 @@
   "scripts": {
     "prestart": "tsc",
     "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "knex migrate:down && knex migrate:up && knex seed:run",
+    "start:dev": "ts-node src/index.ts"
   },
   "engines": {
     "node": "v16.9.1",
